@@ -2,6 +2,7 @@
 import { UserInfo } from '../../models/users';
 import { router } from '@kit.ArkUI';
 import BottomInput from './BottomInput';
+import Message from './Message';
 
 // main_pages.json文件中显示其路径，若没有自动创建则无法跳转，且添加的可能不是pege页面
 @Entry
@@ -38,7 +39,20 @@ struct ChatDatell {
       .padding(10)
 
       //中间聊天区域
-      Blank()
+      // Blank()
+      List() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], () => {
+          ListItem() {
+            Message()
+          }
+        })
+      }
+      .width('100%')
+      .height('100%')
+      .scrollBar(BarState.Off)
+      //此处记得设置.layoutWeight(1)，否则下面的输入框又会被挤出屏幕外
+      .layoutWeight(1)
+
       //底部输入栏
       BottomInput()
     }

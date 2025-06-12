@@ -35,14 +35,12 @@ struct BottomInput {
           .width(20)
       }
       .width('100%')
-
       .padding({
         top: 10,
         bottom: 10,
         left: 6,
         right: 6
       })
-
     }
     .width('100%')
     .backgroundColor($r('app.color.second_back_color'))
