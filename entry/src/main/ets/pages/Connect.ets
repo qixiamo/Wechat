@@ -1,4 +1,5 @@
 import { DefaultUserList, UserInfo } from '../models/users'
+import { router } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -97,6 +98,13 @@ ForEach(
               }
             })
           }
+          .onClick(() => {
+            router.pushUrl({
+              url: 'pages/ChatDatell/ChatDatell',
+              //通过params将名称传到聊天页面去
+              params: item
+            })
+          })
         }, (item: UserInfo) => item.user_id)
       }
       .width('100%')
